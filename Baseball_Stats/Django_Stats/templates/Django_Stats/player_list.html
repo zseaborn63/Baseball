@@ -2,4 +2,21 @@
 
 {% block content %}
   <h1>Hello MoTo!</h1>
+  <div class="row">
+    {% for object in object_list %}
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              {{object.nameFirst}} {{ object.nameLast }}
+            </span>
+              <p>
+                {{ object.debut }}
+              </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
 {% endblock %}
