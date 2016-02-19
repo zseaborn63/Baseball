@@ -7,6 +7,7 @@ def load_player_data(apps, schema_editor):
     stats_df.fillna(0, inplace=True)
 
     for row in stats_df.iterrows():
+        print(row[1].lahmanID)
         lahmanID = row[1].lahmanID
         player_key = row[1].playerID
         managerID = row[1].managerID
@@ -40,3 +41,4 @@ def load_player_data(apps, schema_editor):
         holtzID = row[1].holtzID
         bbrefID = row[1].bbrefID
         Player.objects.create(lahmanID=lahmanID, player_key=player_key, managerID=managerID, hofID=hofID, birthYear=birthYear, birthMonth=birthMonth, birthDay=birthDay, birthCountry=birthCountry, birthState=birthState, birthCity=birthCity, deathCountry=deathCountry, deathState=deathState, deathCity=deathCity, deathYear=deathYear, deathMonth=deathMonth, deathDay=deathDay, nameFirst=nameFirst, nameLast=nameLast, nameNote=nameNote, nameGiven=nameGiven, nameNick=nameNick, weight=weight, height=height, bats=bats, throws=throws, debut=debut, finalGame=finalGame, college=college, lahman40ID=lahman40ID, lahman45ID=lahman45ID, holtzID=holtzID, bbrefID=bbrefID)
+        print(Player.objects.all().count())

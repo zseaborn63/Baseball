@@ -37,4 +37,5 @@ class Player(models.Model):
     holtzID = models.CharField(max_length=9)
     bbrefID = models.CharField(max_length=9)
 
-    
+    def __str__(self):
+        return self.player_key
