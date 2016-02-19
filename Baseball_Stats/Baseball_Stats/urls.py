@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from Django_Stats.views import PlayerListView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'Django_Stats.views.index'),
+    url(r'^$', 'Django_Stats.views.index', name='home'),
+    url(r'^players/$', PlayerListView.as_view(), name='player_list')
 ]
